@@ -63,9 +63,9 @@ async def get_color_by_name(COLOR_CODE):
 
 async def get_position(pg_width, pg_height, text_width, position):
     bottomLeft = {
-        "T": [int((pg_width - text_width) / 2), int(pg_height / 20)],
-        "M": [int((pg_width - text_width) / 2), int((pg_height - pg_height / 20) / 2)],
-        "B": [int((pg_width - text_width) / 2), int(pg_height - pg_height / 20)],
+        "T": [int((pg_width - text_width) / 2), int(pg_height / 8)],
+        "M": [int((pg_width - text_width) / 2), int((pg_height - pg_height / 8) / 2)],
+        "B": [int((pg_width - text_width) / 2), int(pg_height - pg_height / 8)],
     }
     return bottomLeft[position][0], bottomLeft[position][1]
 
@@ -79,9 +79,9 @@ async def add_text_watermark(
         with fitz.open(input_file) as pdf:
             for page in pdf:
 
-                font = fitz.Font(fontname="tiit")
+                font = fitz.Font(fontfile="font.ttf")
                 text_width = font.text_length(
-                    watermark_text, fontsize=int(page.bound().height // 20)
+                    watermark_text, fontsize=int(page.bound().height // 8)
                 )
 
                 tw = fitz.TextWriter(
@@ -97,7 +97,7 @@ async def add_text_watermark(
                 tw.append(
                     (txt_bottom, txt_left),
                     watermark_text,
-                    fontsize=int(page.bound().height // 20),
+                    fontsize=int(page.bound().height // 8),
                     font=font,
                 )
                 tw.write_text(page)
@@ -159,7 +159,7 @@ async def watermarkPDF(
                 input_file=input_file,
                 output_file=output_path,
                 watermark_text=watermark,
-                opacity=_opacity[-2:],
+                opacity=_opacity[-5:],
                 position=_position,
                 color=_color,
             )
