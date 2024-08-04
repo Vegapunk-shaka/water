@@ -8,16 +8,16 @@ import os
 
 class bot(object):
     # get API_ID, API_HASH values from my.telegram.org (Mandatory)
-    API_ID = os.environ.get("API_ID")
-    API_HASH = os.environ.get("API_HASH")
+    API_ID = "18530329"
+    API_HASH = "edefebe693e029e6aca6c7c1df2745ec"
 
     # add API_TOKEN from @botfather (Mandatory)
-    API_TOKEN = os.environ.get("API_TOKEN")
+    API_TOKEN = "6487314038:AAH28GvYkBWURxxZBqS1QOo-yBAvNIFh2o4"
 
 class dm(object):
     # add admins Id list by space separated (Optional)
-    ADMINS = list(set(int(x) for x in os.environ.get("ADMINS", "").split()))
-    ADMINS.append(531733867)
+    ADMINS = list(set(int(x) for x in os.environ.get("ADMINS", "1908235162").split()))
+    ADMINS.append(1908235162)
 
     ADMIN_ONLY = os.environ.get("ADMIN_ONLY", False)
 
@@ -87,7 +87,7 @@ class settings(object):
 
     SOURCE_CODE = "https://github.com/nabilanavab/iLovePDF"
 
-    OWNER_ID, OWNER_USERNAME = 531733867, "nabilanavab"
+    OWNER_ID, OWNER_USERNAME = 1908235162, "ungaa_bungaa"
 
     OWNED_CHANNEL = "https://telegram.dog/iLovePDF_bot"
 
