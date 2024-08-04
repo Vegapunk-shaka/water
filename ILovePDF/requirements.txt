@@ -11,7 +11,7 @@ motor
 psutil
 pymongo[srv]
 hachoir
-pytelegrambotapi
+pyTelegramBotAPI
 aiohttp
 aspose-words
 pdfkit
