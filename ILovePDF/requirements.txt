@@ -21,3 +21,9 @@ arabic-reshaper
 python-bidi
 flask
 gunicorn
+aiofiles
+aiohttp
+beautifulsoup4
+lxml
+requests
+tldextract
