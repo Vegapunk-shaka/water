@@ -12,7 +12,7 @@ class bot(object):
     API_HASH = "edefebe693e029e6aca6c7c1df2745ec"
 
     # add API_TOKEN from @botfather (Mandatory)
-    API_TOKEN = "6487314038:AAH28GvYkBWURxxZBqS1QOo-yBAvNIFh2o4"
+    API_TOKEN = "7402494332:AAHjCee7LHE7K5PU8PMXlza2r1Dq8pGzXdk"
 
 class dm(object):
     # add admins Id list by space separated (Optional)
