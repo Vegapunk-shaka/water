@@ -80,12 +80,13 @@ async def add_text_watermark(
             for page in pdf:
 
                 font = fitz.Font(fontfile="font.ttf")
+
                 text_width = font.text_length(
                     watermark_text, fontsize=int(page.bound().height // 8)
                 )
 
                 tw = fitz.TextWriter(
-                    page.rect, opacity=int(opacity) / 10, color=COLOR_CODE
+                    page.rect, opacity=int(opacity) / 8, color=COLOR_CODE
                 )
                 txt_bottom, txt_left = await get_position(
                     pg_width=page.bound().width,
@@ -159,7 +160,7 @@ async def watermarkPDF(
                 input_file=input_file,
                 output_file=output_path,
                 watermark_text=watermark,
-                opacity=_opacity[-5:],
+                opacity=_opacity[-2:],
                 position=_position,
                 color=_color,
             )
