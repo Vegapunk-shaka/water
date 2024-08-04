@@ -13,21 +13,21 @@ async def add_text_watermark(input_file, output_file, watermark_text):
         with fitz.open(input_file) as pdf:
             for page in pdf:
 
-                font = fitz.Font(fontname="tiit")
+                font = fitz.Font(fontfile="font.ttf")
                 text_width = font.text_length(
-                    watermark_text, fontsize=int(page.bound().height // 20)
+                    watermark_text, fontsize=int(page.bound().height // 8)
                 )
 
                 tw = fitz.TextWriter(page.rect, opacity=0.5, color=(0, 0, 0))
 
                 txt_bottom, txt_left = int((page.bound().width - text_width) / 2), int(
-                    (page.bound().height - page.bound().height / 20) / 2
+                    (page.bound().height - page.bound().height / 8) / 2
                 )
 
                 tw.append(
                     (txt_bottom, txt_left),
                     watermark_text,
-                    fontsize=int(page.bound().height // 20),
+                    fontsize=int(page.bound().height // 8),
                     font=font,
                 )
                 tw.write_text(page)
