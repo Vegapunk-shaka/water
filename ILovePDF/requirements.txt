@@ -4,7 +4,7 @@ pillow
 PyMuPdf
 PyPDF2
 convertapi
-pyromod
+pyromod==1.5
 fpdf2
 ocrmypdf
 motor
